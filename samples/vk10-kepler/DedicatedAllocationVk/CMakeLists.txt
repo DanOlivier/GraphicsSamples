@@ -1,0 +1,3 @@
+custom_add_sample(DedicatedAllocationVk
+	DedicatedAllocationVk.cpp
+)

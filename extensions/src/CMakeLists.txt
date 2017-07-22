@@ -1,0 +1,12 @@
+#include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+
+add_subdirectory(NsFoundation)
+add_subdirectory(NvAppBase)
+add_subdirectory(NvAssetLoader)
+add_subdirectory(NvEGLUtil)
+add_subdirectory(NvGamepad)
+add_subdirectory(NvGLUtils)
+add_subdirectory(NvImage)
+add_subdirectory(NvModel)
+add_subdirectory(NvUI)
+add_subdirectory(NvVkUtil)
