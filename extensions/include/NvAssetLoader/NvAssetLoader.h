@@ -198,5 +198,6 @@ inline std::string NvAssetLoadTextFile(const char* fileName)
 	return result;
 }
 
+bool NvAssetGetFilePath(const std::string fileName, std::string& path);
 
 #endif

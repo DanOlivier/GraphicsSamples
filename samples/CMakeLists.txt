@@ -1,5 +1,7 @@
 include(CMakeParseArguments)
 
+add_custom_target(run-all)
+
 function(custom_add_sample _target)
     #cmake_parse_arguments(ARG "" "WORDS" "" ${ARGN})
     # use ${ARG_WORD}
@@ -48,6 +50,7 @@ function(custom_add_sample _target)
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/${_target}
     )
+    add_dependencies(run-all run-${_target})
 endfunction()
 
 add_subdirectory(es2-aurora/Bloom)
