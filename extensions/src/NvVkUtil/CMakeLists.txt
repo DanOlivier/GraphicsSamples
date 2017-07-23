@@ -5,14 +5,13 @@ file(GLOB GLSLC_SOURCE_FILES "src_shaders/*.glslc")
 
 foreach(GLSLC ${GLSLC_SOURCE_FILES})
   get_filename_component(FILE_NAME ${GLSLC} NAME_WE)
-  message("GLSLC: ${GLSLC}")
   add_custom_command(
     OUTPUT shaders/${FILE_NAME}.h shaders/${FILE_NAME}.cpp
     COMMAND mkdir -p shaders
     COMMAND ${glsl2spirv} -cpp ${FILE_NAME} -o shaders/${FILE_NAME} ${GLSLC}
     DEPENDS ${GLSLC}
+    COMMENT "GLSLC: ${GLSLC}, shaders/${FILE_NAME}.h, shaders/${FILE_NAME}.cpp"
   )
-  message("GLSLC: ${GLSLC}, shaders/${FILE_NAME}.h, shaders/${FILE_NAME}.cpp")
 endforeach()
 
 list(APPEND SOURCES

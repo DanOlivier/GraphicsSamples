@@ -44,13 +44,30 @@ function(custom_add_sample _target)
         vulkan
     )
 
+
     add_custom_target(run-${_target}
-        COMMAND echo PWD: $$(pwd)
         COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${_target}
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/${_target}
     )
     add_dependencies(run-all run-${_target})
+
+    set(glsl2spirv ${CMAKE_SOURCE_DIR}/BuildTools/spir-v/bin/glsl2spirv)
+    file(GLOB GLSL_SOURCE_FILES "assets/src_shaders/*.glsl")
+
+    foreach(GLSL ${GLSL_SOURCE_FILES})
+        get_filename_component(FILE_NAME ${GLSL} NAME_WE)
+        set(output_file assets/shaders/${FILE_NAME}.nvs)
+        message("Found a GLSL shader file: ${GLSL}")
+        message("Preparing to generate: ${output_file}")
+        add_custom_command(
+            OUTPUT ${output_file}
+            COMMAND mkdir -p assets/shaders
+            COMMAND ${glsl2spirv} -o ${output_file} ${GLSL}
+            DEPENDS ${GLSL}
+            COMMENT "Generating ${output_file} from ${GLSL}"
+        )
+    endforeach()
 endfunction()
 
 add_subdirectory(es2-aurora/Bloom)
