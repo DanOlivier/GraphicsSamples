@@ -45,7 +45,7 @@
 
 #include "NvAppBase/gl/NvSampleAppGL.h"
 
-#include "GLFW/KHR/khrplatform.h" 
+#include "KHR/khrplatform.h" 
 #include "NV/NvMath.h"
 #include "NvGamepad/NvGamepad.h"
 #include "NvGLUtils/NvGLSLProgram.h"

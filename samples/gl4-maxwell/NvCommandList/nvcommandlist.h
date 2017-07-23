@@ -214,6 +214,24 @@ typedef void (GLEXT_APIENTRY *PFNGLCALLCOMMANDLISTNVPROC)(GLuint list);
 typedef GLuint (GLEXT_APIENTRY *PFNGLGETCOMMANDHEADERNVPROC)(GLenum id, GLuint tokenSize);
 typedef GLushort(GLEXT_APIENTRY* PFNGLGETSTAGEINDEXNVPROC)(GLenum shadertype);
 
+#undef glCreateStatesNV
+#undef glDeleteStatesNV
+#undef glIsStateNV
+#undef glStateCaptureNV
+#undef glDrawCommandsNV
+#undef glDrawCommandsAddressNV
+#undef glDrawCommandsStatesNV
+#undef glDrawCommandsStatesAddressNV
+#undef glCreateCommandListsNV
+#undef glDeleteCommandListsNV
+#undef glIsCommandListNV
+#undef glListDrawCommandsStatesClientNV
+#undef glCommandListSegmentsNV
+#undef glCompileCommandListNV
+#undef glCallCommandListNV
+#undef glGetCommandHeaderNV
+#undef glGetStageIndexNV
+
 extern PFNGLCREATESTATESNVPROC __nvcCreateStatesNV;
 inline void glCreateStatesNV(GLsizei n, GLuint *states)
 {

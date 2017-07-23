@@ -68,12 +68,12 @@ using std::vector;
 #endif
 
 // New NV_path_rendering API version 1.2 command for getting path objects ordered by font glyph index
-typedef GLenum (GLAPIENTRYP PFNGLPATHGLYPHINDEXARRAYNVPROC) (GLuint firstPathName, GLenum fontTarget, const GLvoid *fontName, GLbitfield fontStyle, GLuint firstGlyphIndex, GLsizei numGlyphs, GLuint pathParameterTemplate, GLfloat emScale);
-typedef GLenum (GLAPIENTRYP PFNGLPATHMEMORYGLYPHINDEXARRAYNVPROC) (GLuint firstPathName, GLenum fontTarget, GLsizeiptr fontSize, const GLvoid *fontData, GLbitfield fontStyle, GLuint firstGlyphIndex, GLsizei numGlyphs, GLuint pathParameterTemplate, GLfloat emScale);
-typedef GLenum (GLAPIENTRYP PFNGLPATHGLYPHINDEXRANGENVPROC) (GLenum fontTarget, const GLvoid *fontName, GLbitfield fontStyle, GLuint pathParameterTemplate, GLfloat emScale, GLuint *baseAndCount);
-static PFNGLPATHGLYPHINDEXARRAYNVPROC glPathGlyphIndexArrayNV = NULL;
-static PFNGLPATHMEMORYGLYPHINDEXARRAYNVPROC glPathMemoryGlyphIndexArrayNV = NULL;
-static PFNGLPATHGLYPHINDEXRANGENVPROC glPathGlyphIndexRangeNV = NULL;
+//typedef GLenum (GLAPIENTRYP PFNGLPATHGLYPHINDEXARRAYNVPROC) (GLuint firstPathName, GLenum fontTarget, const GLvoid *fontName, GLbitfield fontStyle, GLuint firstGlyphIndex, GLsizei numGlyphs, GLuint pathParameterTemplate, GLfloat emScale);
+//typedef GLenum (GLAPIENTRYP PFNGLPATHMEMORYGLYPHINDEXARRAYNVPROC) (GLuint firstPathName, GLenum fontTarget, GLsizeiptr fontSize, const GLvoid *fontData, GLbitfield fontStyle, GLuint firstGlyphIndex, GLsizei numGlyphs, GLuint pathParameterTemplate, GLfloat emScale);
+//typedef GLenum (GLAPIENTRYP PFNGLPATHGLYPHINDEXRANGENVPROC) (GLenum fontTarget, const GLvoid *fontName, GLbitfield fontStyle, GLuint pathParameterTemplate, GLfloat emScale, GLuint *baseAndCount);
+PFNGLPATHGLYPHINDEXARRAYNVPROC glPathGlyphIndexArrayNV = NULL;
+PFNGLPATHMEMORYGLYPHINDEXARRAYNVPROC glPathMemoryGlyphIndexArrayNV = NULL;
+PFNGLPATHGLYPHINDEXRANGENVPROC glPathGlyphIndexRangeNV = NULL;
 // Possible return tokens from glPathGlyphIndexRangeNV:
 #define GL_FONT_GLYPHS_AVAILABLE_NV                         0x9368
 #define GL_FONT_TARGET_UNAVAILABLE_NV                       0x9369

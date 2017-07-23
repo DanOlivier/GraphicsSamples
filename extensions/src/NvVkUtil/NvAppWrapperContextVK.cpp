@@ -70,6 +70,11 @@ PFN_glSignalVkSemaphoreNV       __nvkglSignalVkSemaphoreNV = 0;
 PFN_glSignalVkFenceNV           __nvkglSignalVkFenceNV = 0;
 PFN_glDrawVkImageNV             __nvkglDrawVkImageNV = 0;
 
+#undef glWaitVkSemaphoreNV
+#undef glSignalVkSemaphoreNV
+#undef glSignalVkFenceNV
+#undef glDrawVkImageNV
+
 void glWaitVkSemaphoreNV(GLuint64 vkSemaphore)
 {
 	__nvkglWaitVkSemaphoreNV(vkSemaphore);

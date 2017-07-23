@@ -51,6 +51,14 @@ add_definitions(
     -DLINUX=1
     -DNV_LINUX=1
 )
+
+if (CMAKE_BUILD_TYPE MATCHES Deb)
+    add_definitions("-D_DEBUG")
+endif()
+if (CMAKE_BUILD_TYPE MATCHES Rel)
+    add_definitions("-DNDEBUG")
+endif()
+
 set(COMMON_FLAGS
     #-funwind-tables 
     -Wall 
@@ -74,6 +82,12 @@ string (REPLACE ";" " " CXX_FLAGS "${CXX_FLAGS}")
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${COMMON_FLAGS}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CXX_FLAGS}")
+
+pkg_check_modules(FT freetype2 REQUIRED)
+#PrintVars(FT)
+pkg_check_modules(HB harfbuzz REQUIRED)
+#PrintVars(HB)
+
 
 add_subdirectory(extensions)
 add_subdirectory(samples)

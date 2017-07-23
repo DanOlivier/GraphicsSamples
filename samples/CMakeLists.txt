@@ -37,10 +37,16 @@ function(custom_add_sample _target)
         glfw
         GLEW
         GL
-        #X11 Xrandr Xxf86vm Xi Xinerama Xcursor
         pthread
         dl
         vulkan
+    )
+
+    add_custom_target(run-${_target}
+        COMMAND echo PWD: $$(pwd)
+        COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${_target}
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/${_target}
     )
 endfunction()
 
@@ -78,10 +84,10 @@ add_subdirectory(gl4-maxwell/CascadedShadowMapping)
 add_subdirectory(gl4-maxwell/ConservativeRaster)
 add_subdirectory(gl4-maxwell/CubemapRendering)
 add_subdirectory(gl4-maxwell/NormalBlendedDecal)
-#add_subdirectory(gl4-maxwell/NvCommandList)
+add_subdirectory(gl4-maxwell/NvCommandList)
 
 add_subdirectory(nvpr/CursiveES)
-#add_subdirectory(nvpr/ShapedTextES)
+add_subdirectory(nvpr/ShapedTextES)
 add_subdirectory(nvpr/TextWheelES)
 add_subdirectory(nvpr/Tiger3DES)
 add_subdirectory(nvpr/TigerWarpES)

@@ -6,12 +6,6 @@ list(APPEND SOURCES
 )
 custom_add_sample(ShapedTextES ${SOURCES})
 
-pkg_check_modules(FT freetype2 REQUIRED)
-#PrintVars(FT)
-
-pkg_check_modules(HB harfbuzz REQUIRED)
-#PrintVars(HB)
-
 target_compile_options(ShapedTextES PRIVATE 
     -I${FT_INCLUDE_DIRS}
 	-I${HB_INCLUDE_DIRS}
@@ -19,5 +13,18 @@ target_compile_options(ShapedTextES PRIVATE
 )
 
 target_link_libraries(ShapedTextES 
+	${FT_LIBRARIES}
+	${HB_LIBRARIES}
 	cg4cpp
+	ucdn
 )
+
+#file(GLOB_RECURSE ShapedTextES_ASSETS "assets/" "*")
+#add_custom_command(TARGET ShapedTextES
+#    PRE_BUILD
+#    COMMAND install -m 644 ${ShapedTextES_ASSETS} .
+#    WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+#    COMMENT "install ShapedTextES runtime assets"
+#)
+
+add_compile_options(ShapedTextES -O0)
