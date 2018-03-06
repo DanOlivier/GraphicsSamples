@@ -1,9 +1,13 @@
-list(APPEND SOURCES
+custom_add_sample(ComputeWaterSimulation 
 	WaveSimThread.cpp
 	ComputeWaterSimulation.cpp
 	WaveSim.cpp
 	WaveSimRenderer.cpp
 	noise.cpp
 	Wave.cpp
+SHADERS
+	assets/shaders/renderVS.glsl
+	assets/shaders/renderFS.glsl
+	assets/shaders/WaterTransformPass.glsl
+	assets/shaders/WaterGradientsPass.glsl
 )
-custom_add_sample(ComputeWaterSimulation ${SOURCES})

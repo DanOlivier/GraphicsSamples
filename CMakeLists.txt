@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.7)
 
 project(samples)
 
-include(FindPkgConfig)
+#include(FindPkgConfig)
+find_package(PkgConfig)
 
 function(PrintVars var)
     if(DEFINED ${var}_FOUND)
@@ -100,6 +101,12 @@ pkg_check_modules(FT freetype2 REQUIRED)
 pkg_check_modules(HB harfbuzz REQUIRED)
 #PrintVars(HB)
 
+#pkg_check_modules(GTEST REQUIRED gtest>=1.7.0)
+#pkg_check_modules(GMOCK REQUIRED gmock>=1.7.0)
 
+pkg_check_modules(SPIRV_TOOLS REQUIRED SPIRV-Tools)
+pkg_check_modules(GLSLANG REQUIRED glslang)
+
+add_subdirectory(BuildTools/spir-v/glsl2spirv)
 add_subdirectory(extensions)
 add_subdirectory(samples)

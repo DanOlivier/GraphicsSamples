@@ -1,9 +1,18 @@
-list(APPEND SOURCES
-    ThreadedRenderingVk.cpp
+custom_add_sample(ThreadedRenderingVk
+	ThreadedRenderingVk.cpp
 	NvInstancedModelExtVK.cpp
 	School.cpp
 	NvInstancedModelExtGL.cpp
 	NvSharedVBOVK.cpp
 	NvSharedVBOGL.cpp
+SHADERS
+	assets/src_shaders/groundplane.glsl
+	assets/src_shaders/gl/staticfish_VS.glsl
+	assets/src_shaders/gl/groundplane_FS.glsl
+	assets/src_shaders/gl/skyboxcolor_VS.glsl
+	assets/src_shaders/gl/staticfish_FS.glsl
+	assets/src_shaders/gl/groundplane_VS.glsl
+	assets/src_shaders/gl/skyboxcolor_FS.glsl
+	assets/src_shaders/staticfish.glsl
+	assets/src_shaders/skyboxcolor.glsl
 )
-custom_add_sample(ThreadedRenderingVk ${SOURCES})

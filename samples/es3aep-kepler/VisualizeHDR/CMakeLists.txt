@@ -1,9 +1,11 @@
-list(APPEND SOURCES
+custom_add_sample(VisualizeHDR 
 	rgbe.cpp
 	ShaderPipeline.cpp
 	HDRImages.cpp
 	FileLoader.cpp
 	aces.cpp
 	VisualizeHDR.cpp
+SHADERS
+	assets/shaders/renderQuadVS.glsl
+	assets/shaders/renderQuadFS.glsl
 )
-custom_add_sample(VisualizeHDR ${SOURCES})

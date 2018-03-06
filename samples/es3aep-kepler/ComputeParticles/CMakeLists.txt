@@ -1,10 +1,13 @@
-list(APPEND SOURCES
+custom_add_sample(ComputeParticles 
 	ParticleSystem.cpp
 	ComputeParticles.cpp
 	noise.cpp
+SHADERS
+	assets/shaders/renderVS.glsl
+	assets/shaders/renderFS.glsl
+	assets/shaders/particlesCS.glsl
 )
-custom_add_sample(ComputeParticles ${SOURCES})
 
 include_directories(
-    assets/shaders
+    assets/shaders	# contains uniform.h
 )

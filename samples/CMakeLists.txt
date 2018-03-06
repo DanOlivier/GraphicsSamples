@@ -2,19 +2,54 @@ include(CMakeParseArguments)
 
 add_custom_target(run-all)
 
+function(compile_shaders _target)
+    if(NOT ARGN)
+        return()
+    endif()
+    #set(glsl2spirv ${CMAKE_SOURCE_DIR}/BuildTools/spir-v/bin/glsl2spirv)
+    #file(GLOB GLSL_SOURCE_FILES "assets/src_shaders/*.glsl")
+    #if(NOT GLSL_SOURCE_FILES)
+    #    return()
+    #endif()
+    #message("ARGN: ${ARGN}")
+    foreach(GLSL ${ARGN})
+        #get_filename_component(FILE_NAME ${GLSL} NAME_WE)
+        string(REGEX REPLACE "\\.[^.]*$" "" FILE_NAME ${GLSL}) # shortest extension
+        get_filename_component(FILE_NAME ${FILE_NAME} NAME) # without directory
+
+        set(output_file shaders/${FILE_NAME}.nvs)
+        #message("Found a GLSL shader file: ${GLSL}")
+        #message("Preparing to generate: ${output_file}")
+        # Must do this in two steps to propagate value
+        set(compiled_shaders ${compiled_shaders} ${output_file})
+        set(compiled_shaders ${compiled_shaders} PARENT_SCOPE)
+        add_custom_command(
+            OUTPUT ${output_file}
+            #COMMAND mkdir -p shaders
+            COMMAND ${CMAKE_COMMAND} -E make_directory shaders
+            COMMAND sleep 1
+            #COMMAND ${CMAKE_COMMAND} -E echo "$<TARGET_FILE:glsl2spirv> -o ${output_file} ${GLSL}"
+            COMMAND "$<TARGET_FILE:glsl2spirv>" -o ${output_file} ${CMAKE_CURRENT_SOURCE_DIR}/${GLSL}
+            DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/${GLSL}
+            COMMENT "Generating ${output_file} from ${GLSL}"
+        )
+    endforeach()
+    #message("compiled_shaders: ${compiled_shaders}")
+    add_custom_target(shaders-${_target} ALL DEPENDS ${compiled_shaders})
+    add_dependencies(${_target} shaders-${_target})
+endfunction()
+
 function(custom_add_sample _target)
-    #cmake_parse_arguments(ARG "" "WORDS" "" ${ARGN})
-    # use ${ARG_WORD}
     list(REMOVE_AT ARGV 0)
-    add_executable(${_target}
-        ${ARGV}
-    )
+    cmake_parse_arguments(ARGS "" "" "SHADERS" ${ARGN})
+    add_executable(${_target} ${ARGS_UNPARSED_ARGUMENTS})
 
     target_compile_definitions(${_target} PRIVATE 
         -DGW_APP_NAME="${_target}"
     )
 
-    include_directories(
+    target_include_directories(${_target}
+    PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}
         ${CMAKE_SOURCE_DIR}/extensions/include
         ${CMAKE_SOURCE_DIR}/extensions/externals/include
@@ -44,6 +79,7 @@ function(custom_add_sample _target)
         vulkan
     )
 
+    compile_shaders(${_target} ${ARGS_SHADERS})
 
     add_custom_target(run-${_target}
         COMMAND ${CMAKE_CURRENT_BINARY_DIR}/${_target}
@@ -51,23 +87,6 @@ function(custom_add_sample _target)
         DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/${_target}
     )
     add_dependencies(run-all run-${_target})
-
-    set(glsl2spirv ${CMAKE_SOURCE_DIR}/BuildTools/spir-v/bin/glsl2spirv)
-    file(GLOB GLSL_SOURCE_FILES "assets/src_shaders/*.glsl")
-
-    foreach(GLSL ${GLSL_SOURCE_FILES})
-        get_filename_component(FILE_NAME ${GLSL} NAME_WE)
-        set(output_file assets/shaders/${FILE_NAME}.nvs)
-        #message("Found a GLSL shader file: ${GLSL}")
-        #message("Preparing to generate: ${output_file}")
-        add_custom_command(
-            OUTPUT ${output_file}
-            COMMAND mkdir -p assets/shaders
-            COMMAND ${glsl2spirv} -o ${output_file} ${GLSL}
-            DEPENDS ${GLSL}
-            COMMENT "Generating ${output_file} from ${GLSL}"
-        )
-    endforeach()
 endfunction()
 
 add_subdirectory(es2-aurora/Bloom)

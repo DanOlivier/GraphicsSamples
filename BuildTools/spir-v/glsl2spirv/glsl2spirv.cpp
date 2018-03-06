@@ -21,7 +21,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "SimpleOpt.h"
-#include "../include/shaderc/shaderc.hpp"
+#include "shaderc/shaderc.hpp"
 #include "vulkan/vulkan.h"
 #include <cstdio>
 #include <iostream>
@@ -301,17 +301,18 @@ int32_t  WriteFileWrapper(HANDLE fp, const unsigned char* str, uint32_t length) 
 		return 0;
 	}
 #else
-        int32_t written = fwrite(str, 1, length, fp);
-        if (written < 0) {
-                return 0;
-        }
+	int32_t written = fwrite(str, 1, length, fp);
+	if (written < 0) {
+		return 0;
+	}
 #endif
     return (int32_t)written;
 }
 
 int32_t writeBinary(uint32_t size, const uint8_t* data) {
-	int32_t written = 0;	
-        written = WriteFileWrapper(binaryFp, data, size);
+	if(size == 0)
+		return 0;
+	int32_t written = WriteFileWrapper(binaryFp, data, size);
 	if (written <= 0) {
 		fprintf(stderr, "Fatal Error: could not write output file " STRING_TAG "\n", binaryOutfileName);
 		return -1;
@@ -721,12 +722,12 @@ int main(int argc, NVCHAR* argv[])
 	} else {
 		writeData = writeBinary;
 
-			// Write our binary file:
-			// NVSPRV00
-			// <32bit stage count>
-			// <32bit stage offset><32bit stage size><32bit stage flag>
-			if (openBinaryFile(outfile))
-				return -1;
+		// Write our binary file:
+		// NVSPRV00
+		// <32bit stage count>
+		// <32bit stage offset><32bit stage size><32bit stage flag>
+		if (openBinaryFile(outfile))
+			return -1;
 	}
 
 	const uint32_t headerLen = 8;

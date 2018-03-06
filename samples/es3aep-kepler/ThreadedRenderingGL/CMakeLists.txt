@@ -1,5 +1,5 @@
-list(APPEND SOURCES
-    VertexFormatBinder.cpp
+custom_add_sample(ThreadedRenderingGL
+	VertexFormatBinder.cpp
 	BindlessTextureHelper.cpp
 	NvSharedVBOGL_Pooled.cpp
 	ThreadedRenderingGL.cpp
@@ -8,5 +8,13 @@ list(APPEND SOURCES
 	NvInstancedModelExtGL.cpp
 	NvSharedVBOGL_MappedSubRanges.cpp
 	NvSharedVBOGL_Orphaning.cpp
+SHADERS
+	assets/src_shaders/staticfish_VS.glsl
+	assets/src_shaders/groundplane_FS.glsl
+	assets/src_shaders/skyboxcolor_VS.glsl
+	assets/src_shaders/staticfish_FS.glsl
+	assets/src_shaders/groundplane_VS.glsl
+	assets/src_shaders/staticfishMDI_VS.glsl
+	assets/src_shaders/skyboxcolor_FS.glsl
+	assets/src_shaders/staticfishMDI_FS.glsl
 )
-custom_add_sample(ThreadedRenderingGL ${SOURCES})

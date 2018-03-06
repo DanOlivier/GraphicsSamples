@@ -1,3 +1,10 @@
 custom_add_sample(NormalBlendedDecal
 	NormalBlendedDecal.cpp
+SHADERS
+	assets/shaders/decal_fragment.glsl
+	assets/shaders/combiner_fragment.glsl
+	assets/shaders/base_vertex.glsl
+	assets/shaders/plain_fragment.glsl
+	assets/shaders/plain_vertex.glsl
+	assets/shaders/gbuffer_fragment.glsl
 )
