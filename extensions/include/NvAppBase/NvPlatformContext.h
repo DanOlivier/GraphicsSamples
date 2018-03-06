@@ -161,6 +161,7 @@ struct NvRedrawMode {
 /// along with a method of retrieving an instance
 class NvPlatformContext {
 public:
+    virtual ~NvPlatformContext() {}
     /// Mainloop active query.
     /// Query to determine if the application should continue to parse events, or can return
     /// from its mainloop.

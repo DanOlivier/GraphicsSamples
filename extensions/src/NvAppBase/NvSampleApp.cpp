@@ -135,7 +135,9 @@ NvSampleApp::~NvSampleApp()
 
 bool NvSampleApp::baseInitRendering(void) {
     if (mUseFBOPair)
+    {
         mUseFBOPair = getAppContext()->useOffscreenRendering(m_fboWidth, m_fboHeight);
+    }
 
 	getAppContext()->contextInitRendering();
 
@@ -207,7 +209,9 @@ void NvSampleApp::baseReshape(int32_t w, int32_t h) {
     m_height = h;
 
     if (mUIWindow)
+    {
         mUIWindow->HandleReshape((float)w, (float)h);
+    }
 	if (m_inputHandler)
 	{
 		m_inputHandler->setScreenSize(w, h);
@@ -341,15 +345,14 @@ bool NvSampleApp::pointerInput(NvInputDeviceType::Enum device, NvPointerActionTy
     // if UI system didn't handle, we pass pointer inside the app framework.
     // TODO: might add support for passing gesture events instead.
     if (handlePointerInput(device, action, modifiers, count, points))
+    {
         return true;
-	if (m_inputHandler)
-	{
-		return m_inputHandler->processPointer(device, action, modifiers, count, points);
-	}
-	else
-	{
-		return m_transformer->processPointer(device, action, modifiers, count, points);
-	}
+    }
+    if (m_inputHandler)
+    {
+        return m_inputHandler->processPointer(device, action, modifiers, count, points);
+    }
+    return m_transformer->processPointer(device, action, modifiers, count, points);
 }
 
 

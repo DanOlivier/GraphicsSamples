@@ -62,6 +62,7 @@ namespace Nv
             , m_vertSize(0)
         {
         }
+        virtual ~SubMesh() {}
 
         /// Checks to see if the submesh's vertices contain normals
         /// \return True if the submesh's vertices contain normals, 

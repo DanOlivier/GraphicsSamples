@@ -52,12 +52,23 @@ add_definitions(
     -DNV_LINUX=1
 )
 
-if (CMAKE_BUILD_TYPE MATCHES Deb)
-    add_definitions("-D_DEBUG")
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
 endif()
-if (CMAKE_BUILD_TYPE MATCHES Rel)
-    add_definitions("-DNDEBUG")
-endif()
+#if (CMAKE_BUILD_TYPE MATCHES Deb)
+#    message("-D_DEBUG")
+#    add_definitions("-D_DEBUG")
+#endif()
+#if (CMAKE_BUILD_TYPE MATCHES Rel)
+#    message("-DNDEBUG")
+#    add_definitions("-DNDEBUG")
+#endif()
+
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -D_DEBUG")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -D_DEBUG")
+
+set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -DNDEBUG")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -DNDEBUG")
 
 set(COMMON_FLAGS
     #-funwind-tables 
@@ -71,6 +82,7 @@ set(COMMON_FLAGS
     -Wno-unused-function 
     #-malign-double
     #-fno-omit-frame-pointer
+    -Wno-sign-compare
 )
 set(CXX_FLAGS
     ${COMMON_FLAGS}

@@ -58,8 +58,8 @@ function(custom_add_sample _target)
     foreach(GLSL ${GLSL_SOURCE_FILES})
         get_filename_component(FILE_NAME ${GLSL} NAME_WE)
         set(output_file assets/shaders/${FILE_NAME}.nvs)
-        message("Found a GLSL shader file: ${GLSL}")
-        message("Preparing to generate: ${output_file}")
+        #message("Found a GLSL shader file: ${GLSL}")
+        #message("Preparing to generate: ${output_file}")
         add_custom_command(
             OUTPUT ${output_file}
             COMMAND mkdir -p assets/shaders
