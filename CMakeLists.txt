@@ -43,10 +43,8 @@ include(CheckLibraryExists)
 #include(CheckPrototypeExists)
 include(CheckStructHasMember)
 
-#include_directories(${CMAKE_SOURCE_DIR}/extensions/include)
-#include_directories(${CMAKE_SOURCE_DIR}/extensions/include/NvVkUtil)
-#include_directories(${CMAKE_SOURCE_DIR}/extensions/include/NsFoundation)
-#include_directories(${CMAKE_SOURCE_DIR}/extensions/include/NvFoundation)
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
+include(compile_shaders)
 
 add_definitions(
     -DLINUX=1
