@@ -1,4 +1,4 @@
-list(APPEND SOURCES 
+custom_add_sample(OptimizationApp
 	ParticleSystem.cpp
 	scene.cpp
 	SceneRenderer.cpp
@@ -8,5 +8,33 @@ list(APPEND SOURCES
 	OptimizationApp.cpp
 	utils.cpp
 	ParticleRenderer.cpp
+ASSETS
+	assets/shaders/base_es2.frag
+	assets/shaders/base_es2.vert
+	assets/shaders/base.frag
+	assets/shaders/base.vert
+	assets/shaders/cameraViewParticle_es2.frag
+	assets/shaders/cameraViewParticle_es2.vert
+	assets/shaders/cameraViewParticle.frag
+	assets/shaders/cameraViewParticle.vert
+	assets/shaders/depth.frag
+	assets/shaders/depth.vert
+	assets/shaders/unshaded_alpha.frag
+	assets/shaders/unshaded_solid.frag
+	assets/shaders/unshaded.vert
+	assets/shaders/upsampleBilinear.frag
+	assets/shaders/upsampleBilinear.vert
+	assets/shaders/upsampleCrossBilateral.frag
+	assets/shaders/upsampleCrossBilateral.vert
+
+	assets/images/palm.dds
+	assets/images/terrain_colormap.dds
+	assets/images/terrain_heightmap.bmp
+	assets/images/terrain_heightmap.dds
+	assets/images/tex1.dds
+	assets/images/white_dummy.dds
+
+	assets/models/cow.obj
+	assets/models/palm_tree.obj
+	assets/models/T34-85.obj
 )
-custom_add_sample(OptimizationApp ${SOURCES})

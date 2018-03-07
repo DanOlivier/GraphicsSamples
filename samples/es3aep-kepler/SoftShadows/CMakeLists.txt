@@ -1,8 +1,20 @@
-list(APPEND SOURCES
-    SoftShadowsRenderer.cpp
+custom_add_sample(SoftShadows
+	SoftShadowsRenderer.cpp
 	KnightModel.cpp
 	RigidMesh.cpp
 	PodiumModel.cpp
 	SoftShadows.cpp
+ASSETS
+	assets/textures/lichen6_normal.dds
+	assets/textures/lichen6_rock.dds
+	assets/textures/lichen6.dds
+
+	assets/shaders/depthprepass.frag
+	assets/shaders/depthprepass.vert
+	assets/shaders/eyerender.vert
+	assets/shaders/pcss.frag
+	assets/shaders/shadowmap.frag
+	assets/shaders/shadowmap.vert
+	assets/shaders/vistex.frag
+	assets/shaders/vistex.vert
 )
-custom_add_sample(SoftShadows ${SOURCES})

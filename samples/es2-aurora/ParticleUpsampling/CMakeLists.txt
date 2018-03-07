@@ -1,4 +1,4 @@
-list(APPEND SOURCES 
+custom_add_sample(ParticleUpsampling
 	ParticleUpsampling
 	ParticleSystem.cpp
 	SceneRenderer.cpp
@@ -6,6 +6,19 @@ list(APPEND SOURCES
 	Upsampler.cpp
 	ParticleUpsampling.cpp
 	ParticleRenderer.cpp
-)
+ASSETS
+	assets/shaders/cameraViewParticle.frag
+	assets/shaders/cameraViewParticle.vert
+	assets/shaders/lightViewParticle.frag
+	assets/shaders/lightViewParticle.vert
+	assets/shaders/opaqueColor.frag
+	assets/shaders/opaqueColor.vert
+	assets/shaders/opaqueDepth.frag
+	assets/shaders/opaqueDepth.vert
+	assets/shaders/upsampleBilinear.frag
+	assets/shaders/upsampleBilinear.vert
+	assets/shaders/upsampleCrossBilateral.frag
+	assets/shaders/upsampleCrossBilateral.vert
 
-custom_add_sample(ParticleUpsampling ${SOURCES})
+	assets/models/cow.obj
+)

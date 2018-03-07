@@ -1,11 +1,12 @@
-list(APPEND SOURCES
+custom_add_sample(NvCommandList
 	nvcommandlist.cpp
 	nvtoken.cpp
 	statesystem.cpp
 	basic-nvcommandlist.cpp
-SHADERS
+ASSETS
 	assets/shaders/scene.frag.glsl
 	assets/shaders/scene.geo.glsl
 	assets/shaders/scene.vert.glsl
+ASSETS
+	assets/shaders/common.h
 )
-custom_add_sample(NvCommandList ${SOURCES})

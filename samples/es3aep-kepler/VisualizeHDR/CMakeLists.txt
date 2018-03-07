@@ -6,6 +6,17 @@ custom_add_sample(VisualizeHDR
 	aces.cpp
 	VisualizeHDR.cpp
 SHADERS
-	assets/shaders/renderQuadVS.glsl
 	assets/shaders/renderQuadFS.glsl
+	assets/shaders/renderQuadVS.glsl
+ASSETS
+	assets/textures/Infiltrator1.exr
+	assets/textures/Infiltrator1.hdr
+	assets/textures/Infiltrator2.exr
+	assets/textures/Infiltrator2.hdr
+	assets/textures/kite1.exr
+	assets/textures/kite1.hdr
+	assets/textures/kite2.exr
+	assets/textures/kite2.hdr
+	assets/textures/SunTemple.exr
+	assets/textures/SunTemple.hdr
 )

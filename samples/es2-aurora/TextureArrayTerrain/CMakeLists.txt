@@ -1,8 +1,22 @@
-list(APPEND SOURCES
+custom_add_sample(TextureArrayTerrain
 	TerrainSim.cpp
 	TextureArrayTerrain.cpp
 	TerrainGenerator.cpp
 	TerrainSimRenderer.cpp
 	TerrainSimThread.cpp
+ASSETS
+	assets/shaders/skybox.frag
+	assets/shaders/skybox.vert
+	assets/shaders/terrain_es2.frag
+	assets/shaders/terrain_es3.frag
+	assets/shaders/terrain_es3.vert
+	assets/shaders/terrain.frag
+	assets/shaders/terrain.vert
+
+	assets/sky/sky.dds
+	assets/terrain/grass_rgba.dds
+	assets/terrain/rock_rgba.dds
+	assets/terrain/rock2_rgba.dds
+	assets/terrain/snow_flat_rgba.dds
+	assets/terrain/snow_rgba.dds
 )
-custom_add_sample(TextureArrayTerrain ${SOURCES})

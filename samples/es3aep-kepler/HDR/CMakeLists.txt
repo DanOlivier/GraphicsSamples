@@ -1,4 +1,4 @@
-list(APPEND SOURCES
+custom_add_sample(HDR
 	ShaderObject.cpp
 	BlurShaderGenerator.cpp
 	rgbe.cpp
@@ -7,5 +7,26 @@ list(APPEND SOURCES
 	FileLoader.cpp
 	RenderTexture.cpp
 	VertexBufferObject.cpp
+ASSETS
+	assets/models/knot
+	assets/models/skull
+	assets/models/teapot
+	assets/models/venus
+	assets/raw/cup.dat
+	assets/raw/font8x8.dat
+	assets/raw/gate.dat
+	assets/textures/altar_cross_irrad_mmp_s.hdr
+	assets/textures/altar_cross_mmp_s.hdr
+	assets/textures/altar_cross_rough_mmp_s.hdr
+	assets/textures/grace_cross_irrad_mmp_s.hdr
+	assets/textures/grace_cross_mmp_s.hdr
+	assets/textures/grace_cross_rough_mmp_s.hdr
+	assets/textures/mask.dds
+	assets/textures/nvidia_logo.dds
+	assets/textures/rnl_cross_irrad_mmp_s.hdr
+	assets/textures/rnl_cross_mmp_s.hdr
+	assets/textures/rnl_cross_rough_mmp_s.hdr
+	assets/textures/uffizi_cross_irrad_mmp_s.hdr
+	assets/textures/uffizi_cross_mmp_s.hdr
+	assets/textures/uffizi_cross_rough_mmp_s.hdr
 )
-custom_add_sample(HDR ${SOURCES})

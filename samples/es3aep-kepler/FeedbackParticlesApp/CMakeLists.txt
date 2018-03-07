@@ -1,8 +1,17 @@
-list(APPEND SOURCES
+custom_add_sample(FeedbackParticlesApp
 	ParticleSystem.cpp
 	FeedbackParticlesScene.cpp
 	Utils.cpp
 	FeedbackParticlesApp.cpp
 	TextureUtils.cpp
+ASSETS
+	assets/billboard.frag
+	assets/billboard.geom
+	assets/billboard.vert
+	assets/emitter_feedback.geom
+	assets/emitter_feedback.vert
+	assets/fbm.frag
+	assets/fbm.vert
+	assets/feedback.geom
+	assets/feedback.vert
 )
-custom_add_sample(FeedbackParticlesApp ${SOURCES})

@@ -8,13 +8,72 @@ custom_add_sample(ThreadedRenderingGL
 	NvInstancedModelExtGL.cpp
 	NvSharedVBOGL_MappedSubRanges.cpp
 	NvSharedVBOGL_Orphaning.cpp
-SHADERS
-	assets/src_shaders/staticfish_VS.glsl
+ASSETS #SHADERS # exception
 	assets/src_shaders/groundplane_FS.glsl
+	assets/src_shaders/groundplane_VS.glsl
+	assets/src_shaders/skyboxcolor_FS.glsl
 	assets/src_shaders/skyboxcolor_VS.glsl
 	assets/src_shaders/staticfish_FS.glsl
-	assets/src_shaders/groundplane_VS.glsl
-	assets/src_shaders/staticfishMDI_VS.glsl
-	assets/src_shaders/skyboxcolor_FS.glsl
+	assets/src_shaders/staticfish_VS.glsl
 	assets/src_shaders/staticfishMDI_FS.glsl
+	assets/src_shaders/staticfishMDI_VS.glsl
+ASSETS
+	assets/models/Black_White_Fish.nve
+	assets/models/Blue_Fish_02.nve
+	assets/models/Blue_Fish_03.nve
+	assets/models/Blue_Fish_04.nve
+	assets/models/Blue_Fish_05.nve
+	assets/models/Blue_Fish_06.nve
+	assets/models/Blue_Fish_07.nve
+	assets/models/Blue_Fish_08.nve
+	assets/models/Blue_Fish_09.nve
+	assets/models/Blue_Fish.nve
+	assets/models/Cyan_Fish.nve
+	assets/models/Pink_Fish.nve
+	assets/models/Red_Fish.nve
+	assets/models/Violet_Fish.nve
+	assets/models/Yellow_Fish_02.nve
+	assets/models/Yellow_Fish_03.nve
+	assets/models/Yellow_Fish_04.nve
+	assets/models/Yellow_Fish_05.nve
+	assets/models/Yellow_Fish_06.nve
+	assets/models/Yellow_Fish_07.nve
+	assets/models/Yellow_Fish_08.nve
+	assets/models/Yellow_Fish_09.nve
+	assets/models/Yellow_Fish_10.nve
+	assets/models/Yellow_Fish_11.nve
+	assets/models/Yellow_Fish.nve
+
+	assets/textures/Black_White_Fish.dds
+	assets/textures/Blue_Fish_02.dds
+	assets/textures/Blue_Fish_03.dds
+	assets/textures/Blue_Fish_04.dds
+	assets/textures/Blue_Fish_05.dds
+	assets/textures/Blue_Fish_06.dds
+	assets/textures/Blue_Fish_07.dds
+	assets/textures/Blue_Fish_08.dds
+	assets/textures/Blue_Fish_09.dds
+	assets/textures/Blue_Fish.dds
+	assets/textures/caustic1.dds
+	assets/textures/caustic2.dds
+	assets/textures/Cyan_Fish.dds
+	assets/textures/Gradient.dds
+	assets/textures/LogoGL.dds
+	assets/textures/LogoGLES.dds
+	assets/textures/LogoNVIDIA.dds
+	assets/textures/Pink_Fish.dds
+	assets/textures/Red_Fish.dds
+	assets/textures/sand.dds
+	assets/textures/Violet_Fish.dds
+	assets/textures/Yellow_Fish_02.dds
+	assets/textures/Yellow_Fish_03.dds
+	assets/textures/Yellow_Fish_04.dds
+	assets/textures/Yellow_Fish_05.dds
+	assets/textures/Yellow_Fish_06.dds
+	assets/textures/Yellow_Fish_07.dds
+	assets/textures/Yellow_Fish_08.dds
+	assets/textures/Yellow_Fish_09.dds
+	assets/textures/Yellow_Fish_10.dds
+	assets/textures/Yellow_Fish_11.dds
+	assets/textures/Yellow_Fish.dds
 )

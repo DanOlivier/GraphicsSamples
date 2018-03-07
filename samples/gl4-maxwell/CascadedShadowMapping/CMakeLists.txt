@@ -1,6 +1,14 @@
-list(APPEND SOURCES
+custom_add_sample(CascadedShadowMapping
 	CascadedShadowMappingRenderer.cpp
 	KnightModel.cpp
 	CascadedShadowMapping.cpp
+ASSETS
+	assets/shaders/Camera.frag
+	assets/shaders/Camera.vert
+	assets/shaders/Light.vert
+	assets/shaders/LightFgsMulticast.geom
+	assets/shaders/LightGsCull.geom
+	assets/shaders/LightMulticast.geom
+	assets/shaders/LightStandard.geom
+	assets/shaders/LightVsOnly.vert
 )
-custom_add_sample(CascadedShadowMapping ${SOURCES})

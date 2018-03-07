@@ -10,4 +10,11 @@ SHADERS
 	assets/shaders/renderFS.glsl
 	assets/shaders/WaterTransformPass.glsl
 	assets/shaders/WaterGradientsPass.glsl
+ASSETS
+	assets/sky/day.dds
+
+	assets/shaders/water.frag
+	assets/shaders/water.vert
+	assets/shaders/waterFresnel.frag
+	assets/shaders/waterNormals.frag
 )

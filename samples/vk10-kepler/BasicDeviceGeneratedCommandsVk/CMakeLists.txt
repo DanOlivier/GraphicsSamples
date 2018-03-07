@@ -4,4 +4,9 @@ custom_add_sample(BasicDeviceGeneratedCommandsVk
 SHADERS
     assets/src_shaders/cube_map.glsl
     assets/src_shaders/base_model.glsl
+ASSETS
+    assets/models/dragon.nvm
+    assets/models/cow.nvm
+    assets/models/sponza.nvm
+    assets/textures/sky_cube.dds
 )

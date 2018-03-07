@@ -4,7 +4,7 @@ add_custom_target(run-all)
 
 function(custom_add_sample _target)
     list(REMOVE_AT ARGV 0)
-    cmake_parse_arguments(ARGS "" "" "SHADERS" ${ARGN})
+    cmake_parse_arguments(ARGS "" "" "ASSETS;SHADERS" ${ARGN})
     add_executable(${_target} ${ARGS_UNPARSED_ARGUMENTS})
 
     target_compile_definitions(${_target} PRIVATE 
@@ -42,6 +42,7 @@ function(custom_add_sample _target)
         vulkan
     )
 
+    link_assets(${_target} ${ARGS_ASSETS})
     compile_shaders(${_target} ${ARGS_SHADERS})
 
     add_custom_target(run-${_target}

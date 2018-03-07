@@ -2,10 +2,11 @@ custom_add_sample(ComputeParticles
 	ParticleSystem.cpp
 	ComputeParticles.cpp
 	noise.cpp
-SHADERS
-	assets/shaders/renderVS.glsl
-	assets/shaders/renderFS.glsl
+ASSETS
 	assets/shaders/particlesCS.glsl
+	assets/shaders/renderFS.glsl
+	assets/shaders/renderVS.glsl
+	assets/shaders/uniforms.h
 )
 
 include_directories(

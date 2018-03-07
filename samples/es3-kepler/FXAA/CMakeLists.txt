@@ -1,3 +1,22 @@
 custom_add_sample(FXAA
 	FXAA.cpp
+ASSETS
+	assets/models/loop
+	assets/models/triangle
+
+	assets/shaders/Blit.frag
+	assets/shaders/Blit.vert
+	assets/shaders/DrawLine.frag
+	assets/shaders/DrawLine.vert
+	assets/shaders/FXAA_Default.frag
+	assets/shaders/FXAA_DefaultES.frag
+	assets/shaders/FXAA_Extreme_Quality.frag
+	assets/shaders/FXAA_Extreme_QualityES.frag
+	assets/shaders/FXAA_Fastest.frag
+	assets/shaders/FXAA_FastestES.frag
+	assets/shaders/FXAA_High_Quality.frag
+	assets/shaders/FXAA_High_QualityES.frag
+	assets/shaders/FXAA.vert
+	assets/shaders/Object.frag
+	assets/shaders/Object.vert
 )

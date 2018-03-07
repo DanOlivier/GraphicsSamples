@@ -1,14 +1,16 @@
 custom_add_sample(WeightedBlendedOIT
 	WeightedBlendedOIT.cpp
-SHADERS
-	assets/shaders/weighted_final_fragment.glsl
-	assets/shaders/front_peeling_init_fragment.glsl
+ASSETS
 	assets/shaders/base_shade_vertex.glsl
-	assets/shaders/weighted_blend_fragment.glsl
-	assets/shaders/shade_fragment.glsl
-	assets/shaders/front_peeling_peel_fragment.glsl
-	assets/shaders/front_peeling_blend_fragment.glsl
 	assets/shaders/base_vertex.glsl
+	assets/shaders/front_peeling_blend_fragment.glsl
 	assets/shaders/front_peeling_final_fragment.glsl
+	assets/shaders/front_peeling_init_fragment.glsl
+	assets/shaders/front_peeling_peel_fragment.glsl
+	assets/shaders/shade_fragment.glsl
+	assets/shaders/weighted_blend_fragment.glsl
+	assets/shaders/weighted_final_fragment.glsl
+ASSETS
+	assets/models/bunny.obj
+	assets/models/dragon.obj
 )
-

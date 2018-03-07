@@ -1,10 +1,16 @@
-list(APPEND SOURCES
+custom_add_sample(ShapedTextES
 	ShapedText.cpp
 	PathSampleApp.cpp
 	sRGB_math.cpp
 	cg4cpp_xform.cpp
+ASSETS
+	assets/fonts/noto/NotoSerif-Regular.ttf
+	assets/fonts/noto/NotoSansHebrew-Regular.ttf
+	assets/fonts/noto/APACHE-LICENSE-2.0.html
+	assets/fonts/noto/NotoSansTamil-Regular.ttf
+	assets/fonts/noto/NotoSansCJKtc-Light.otf
+	assets/fonts/noto/NotoNaskhArabic-Regular.ttf
 )
-custom_add_sample(ShapedTextES ${SOURCES})
 
 target_compile_options(ShapedTextES PRIVATE 
     -I${FT_INCLUDE_DIRS}
