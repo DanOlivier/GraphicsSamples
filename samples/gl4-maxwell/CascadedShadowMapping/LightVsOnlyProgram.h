@@ -46,6 +46,7 @@ public:
         : LightProgram()
     {
     }
+    virtual ~LightVsOnlyProgram() {}
 
     virtual bool init(
         const char* vertFilename,

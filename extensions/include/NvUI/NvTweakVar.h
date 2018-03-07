@@ -73,6 +73,7 @@ protected:
     }
 
 public:
+    virtual ~NvTweakVarBase() {}
     /** @name Virtual methods for quick value tweaks to a variable.
         @{
     */

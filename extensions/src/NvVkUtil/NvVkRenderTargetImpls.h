@@ -41,7 +41,7 @@
 
 class NvVkMultibufferedRenderTarget : public NvVkRenderTarget {
 public:
-	~NvVkMultibufferedRenderTarget() { }
+	virtual ~NvVkMultibufferedRenderTarget() { }
 
 	static NvVkMultibufferedRenderTarget* create(NvVkContext& vk, const VkFormat& targetFormat, const VkFormat& depthStencilFormat, bool useSwapChain,
 		int32_t w = 0, int32_t h = 0);

@@ -47,6 +47,7 @@ public:
         , m_mvpMatrixUHandle(-1)
     {
     }
+    virtual ~LightProgram() {}
 
     virtual bool init(const char* vertFilename,
         const char* geomFilename,

@@ -228,7 +228,7 @@ private:
 /// A wrapper for all forms of render target
 class NvVkRenderTarget {
 public:
-	~NvVkRenderTarget();
+	virtual ~NvVkRenderTarget();
 
 	/// Retrieve the current frame's NvVkImage
 	virtual NvVkImage& target() = 0;
