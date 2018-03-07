@@ -34,12 +34,12 @@ function(custom_add_sample _target)
             NvUI
         -Wl,--end-group
         Half
-        glfw
-        GLEW
-        GL
+        ${GLFW_LIBRARIES}
+        ${GLEW_LIBRARIES}
+        ${GL_LIBRARIES}
+        ${VULKAN_LIBRARIES}
         pthread
         dl
-        vulkan
     )
 
     link_assets(${_target} ${ARGS_ASSETS})

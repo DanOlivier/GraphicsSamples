@@ -105,6 +105,11 @@ pkg_check_modules(HB harfbuzz REQUIRED)
 pkg_check_modules(SPIRV_TOOLS REQUIRED SPIRV-Tools)
 pkg_check_modules(GLSLANG REQUIRED glslang)
 
+pkg_check_modules(GLFW REQUIRED glfw3)
+pkg_check_modules(GLEW REQUIRED glew)
+pkg_check_modules(GL REQUIRED gl)
+pkg_check_modules(VULKAN REQUIRED vulkan)
+
 add_subdirectory(BuildTools/spir-v/glsl2spirv)
 add_subdirectory(extensions)
 add_subdirectory(samples)
