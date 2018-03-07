@@ -5,10 +5,12 @@ custom_add_sample(VisualizeHDR
 	FileLoader.cpp
 	aces.cpp
 	VisualizeHDR.cpp
-SHADERS
+ASSETS
 	assets/shaders/renderQuadFS.glsl
 	assets/shaders/renderQuadVS.glsl
 ASSETS
+	assets/shaders/uniforms.h
+
 	assets/textures/Infiltrator1.exr
 	assets/textures/Infiltrator1.hdr
 	assets/textures/Infiltrator2.exr

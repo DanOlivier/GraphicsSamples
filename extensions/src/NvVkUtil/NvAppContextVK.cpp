@@ -614,8 +614,9 @@ bool NvAppContextVK::initializeDevice(PFN_vkGetProcAddressNV getProc)
     }
 
     if (!_physicalDevice)
+    {
         return false;
-
+    }
 
 	VkDeviceQueueCreateInfo queueCreateInfo = { VK_STRUCTURE_TYPE_DEVICE_QUEUE_CREATE_INFO };
 	queueCreateInfo.queueFamilyIndex = _queueFamilyIndex;

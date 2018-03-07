@@ -475,7 +475,9 @@ bool NvSampleApp::keyInput(uint32_t code, NvKeyActionType::Enum action) {
     }
         
     if (handleKeyInput(code, action))
+    {
         return true;
+    }
 
 	// give last shot to transformer.
 	if (m_inputHandler)

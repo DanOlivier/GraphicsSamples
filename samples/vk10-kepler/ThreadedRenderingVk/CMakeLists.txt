@@ -7,14 +7,15 @@ custom_add_sample(ThreadedRenderingVk
 	NvSharedVBOGL.cpp
 SHADERS
 	assets/src_shaders/groundplane.glsl
+	assets/src_shaders/staticfish.glsl
+	assets/src_shaders/skyboxcolor.glsl
+ASSETS
 	assets/src_shaders/gl/staticfish_VS.glsl
 	assets/src_shaders/gl/groundplane_FS.glsl
 	assets/src_shaders/gl/skyboxcolor_VS.glsl
 	assets/src_shaders/gl/staticfish_FS.glsl
 	assets/src_shaders/gl/groundplane_VS.glsl
 	assets/src_shaders/gl/skyboxcolor_FS.glsl
-	assets/src_shaders/staticfish.glsl
-	assets/src_shaders/skyboxcolor.glsl
 ASSETS
 	assets/models/Black_White_Fish.nve
 	assets/models/Blue_Fish_02.nve

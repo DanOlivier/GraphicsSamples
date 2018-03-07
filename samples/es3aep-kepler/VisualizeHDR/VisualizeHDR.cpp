@@ -105,7 +105,7 @@ void VisualizeHDR::loadHDRImage(const std::string& filename)  {
 
 	mHDRImage = new HDRImage;
 	if (!mHDRImage->loadHDRIFromFile(filename.c_str())) {
-		fprintf(stderr, "Error loading image file '%s'\n", mHDRImage);
+		fprintf(stderr, "Error loading image file '%s'\n", filename.c_str());
 		exit(-1);
 	}
 	int32_t w = mHDRImage->getWidth();
